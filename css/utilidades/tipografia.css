@@ -23,7 +23,7 @@
 }
 
 .font-1-xl {
-  font: 600 2rem/1.25 "Poppins", sans-serif;
+  font: 600 clamp(1.5rem, 2.5vw, 2rem) / 1.25 "Poppins", sans-serif;
 }
 
 .font-2-xs {
@@ -35,7 +35,7 @@
 }
 
 .font-2-m {
-  font: 500 1.125rem/1.35 "Roboto", sans-serif;
+  font: 500 clamp(0.75rem, 2vw, 1.25rem) / 1.35 "Roboto", sans-serif;
 }
 
 .font-2-l,
