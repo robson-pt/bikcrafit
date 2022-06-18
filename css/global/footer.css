@@ -54,7 +54,9 @@
 @media (max-width: 600px) {
   .footer {
     grid-template-columns: 1fr;
-    gap: 3.75rem;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .footer-copy {
