@@ -1,0 +1,188 @@
+#orcamento {
+  background: linear-gradient(var(--c11) 600px, var(--c1) 0);
+}
+
+.orcamento {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  padding-bottom: 7.5rem;
+}
+
+.orcamento h2 {
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.orcamento h2::before {
+  content: "";
+  display: inline-block;
+  width: 0.25rem;
+  height: 0.5rem;
+  background: var(--p1);
+  position: absolute;
+  left: -0.75rem;
+}
+
+.orcamento-produto,
+.orcamento-dados {
+  padding: 3.75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.orcamento-produto {
+  border-radius: 0.25rem 0 0 0.25rem;
+  background: var(--c12);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: start;
+  gap: 1.25rem;
+}
+
+.orcamento-produto > * {
+  grid-column: 1/-1;
+}
+
+.orcamento-produto > label {
+  grid-column: initial;
+}
+
+.orcamento-produto label {
+  font: 400 1rem/1.5 "Poppins", sans-serif;
+  color: var(--c4);
+  background: var(--c10);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  border: 1px solid var(--c10);
+}
+
+.orcamento-produto label::before {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid var(--c6);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.orcamento-produto label:hover {
+  background: var(--c9);
+  border-color: var(--c9);
+}
+
+.orcamento-produto input:focus + label {
+  box-shadow: 0 0 0 2px var(--p1);
+  background-color: var(--c12);
+}
+
+.orcamento-produto label span {
+  display: none;
+}
+
+.orcamento-produto input:checked + label span {
+  display: inline-block;
+}
+
+.orcamento-produto input:checked + label::before {
+  border-color: var(--c7);
+  box-shadow: inset 0 0 0 3px var(--c0), inset 0 0 0 6px var(--c7);
+}
+
+.orcamento-produto input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.orcamento-produto input:checked + label {
+  background: var(--c0);
+  color: var(--c11);
+}
+
+.orcamento-dados {
+  border-radius: 0 0.25rem 0.25rem 0;
+  background: var(--c0);
+}
+
+.orcamento-conteudo {
+  display: none;
+}
+
+.orcamento-conteudo h2,
+.orcamento-dados h2:nth-of-type(n + 2) {
+  margin-top: 1.25rem;
+}
+
+#bikcraft:checked ~ #orcamento-bikcraft,
+#seguro:checked ~ #orcamento-seguro {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.orcamento-detalhes {
+  background: var(--c0);
+  padding: 1.25rem;
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 0.25rem;
+  align-items: center;
+}
+
+.orcamento-detalhes li {
+  display: flex;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.orcamento-detalhes li img {
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+
+.orcamento-produto input:checked + label + .orcamento-detalhes {
+  display: grid;
+}
+
+.orcamento .condicoes {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.orcamento .condicoes a {
+  text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  .orcamento-produto,
+  .orcamento-dados {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .orcamento {
+    grid-template-columns: 1fr;
+  }
+
+  .orcamento-dados {
+    border-radius: 0 0 0.25rem 0.25rem;
+  }
+
+  .orcamento-produto {
+    border-radius: 0.25rem 0.25rem 0 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .orcamento-produto {
+    grid-template-columns: 1fr;
+  }
+}

@@ -10,13 +10,14 @@
 
 .form label {
   display: block;
-  font: 600 1rem/1.5 "Poppins", sans-serif;
+  font: 400 1rem/1.5 "Poppins", sans-serif;
   margin-bottom: 0.25rem;
 }
 
 .form input[type="text"],
 .form input[type="email"],
 .form input[type="tel"],
+.form select,
 .form textarea {
   font: 400 1rem/1.5 "Roboto", sans-serif;
   background: var(--c1);
@@ -30,6 +31,7 @@
 .form input[type="text"]:focus,
 .form input[type="email"]:focus,
 .form input[type="tel"]:focus,
+.form select:focus,
 .form textarea:focus {
   outline: none;
   background: var(--c0);
